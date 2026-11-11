@@ -1,0 +1,292 @@
+{
+  "version": "3.0.0",
+  "last_updated": "2026-11-09",
+  "background_music_tree": [
+    {
+      "category": "Chao Garden & Sonic Soundtracks (Local Vault)",
+      "folder_id": "chao_vault",
+      "tracks": [
+        {
+          "id": "sa2_neutral_garden",
+          "name": "SA2 Neutral Chao Garden Ambient",
+          "artist": "Sonic Adventure 2",
+          "file": "assets/audio/ep07-sa2-neutral-chao-garden.wav",
+          "tempo": "88 BPM",
+          "vibe": "Relaxing, nostalgic ambient chimes"
+        },
+        {
+          "id": "sa2_hero_garden",
+          "name": "SA2 Hero Chao Garden Serenade",
+          "artist": "Sonic Adventure 2",
+          "file": "assets/audio/ep08-sa2-hero-chao-garden.wav",
+          "tempo": "82 BPM",
+          "vibe": "Uplifting, peaceful harp and bells"
+        },
+        {
+          "id": "sa2_dark_garden",
+          "name": "SA2 Dark Chao Garden Mystic",
+          "artist": "Sonic Adventure 2",
+          "file": "assets/audio/ep09-sa2-dark-chao-garden.wav",
+          "tempo": "92 BPM",
+          "vibe": "Moody, mystical groove"
+        },
+        {
+          "id": "sa1_station_square",
+          "name": "SA1 Station Square Garden",
+          "artist": "Sonic Adventure",
+          "file": "assets/audio/ep10-sa1-station-square-chao-garden.wav",
+          "tempo": "90 BPM",
+          "vibe": "Warm piano and gentle strings"
+        },
+        {
+          "id": "sa1_egg_carrier",
+          "name": "SA1 Egg Carrier Chao Garden",
+          "artist": "Sonic Adventure",
+          "file": "assets/audio/ep11-sa1-egg-carrier-chao-garden.wav",
+          "tempo": "86 BPM",
+          "vibe": "Airy, floating synth pads"
+        },
+        {
+          "id": "sa1_mystic_ruins",
+          "name": "SA1 Mystic Ruins Chao Garden",
+          "artist": "Sonic Adventure",
+          "file": "assets/audio/ep12-sa1-mystic-ruins-chao-garden.wav",
+          "tempo": "84 BPM",
+          "vibe": "Tropical percussion and acoustic bells"
+        }
+      ]
+    },
+    {
+      "category": "Japanese Jazz Fusion & City Pop (Casiopea & T-Square)",
+      "folder_id": "jazz_fusion",
+      "tracks": [
+        {
+          "id": "casiopea_asayake",
+          "name": "Casiopea - Asayake",
+          "artist": "Casiopea (1982)",
+          "file": "assets/audio/ep07-sa2-neutral-chao-garden.wav",
+          "tempo": "120 BPM",
+          "vibe": "High-energy slap bass and melodic guitar"
+        },
+        {
+          "id": "casiopea_rendezvous",
+          "name": "Casiopea - Midnight Rendezvous",
+          "artist": "Casiopea (1979)",
+          "file": "assets/audio/ep08-sa2-hero-chao-garden.wav",
+          "tempo": "118 BPM",
+          "vibe": "Driving slap bass and tight drum groove"
+        },
+        {
+          "id": "tsquare_truth",
+          "name": "T-Square - Truth",
+          "artist": "T-Square (1987)",
+          "file": "assets/audio/ep09-sa2-dark-chao-garden.wav",
+          "tempo": "142 BPM",
+          "vibe": "High-octane esports pace and brass"
+        },
+        {
+          "id": "takanaka_lagoon",
+          "name": "Masayoshi Takanaka - Blue Lagoon",
+          "artist": "Masayoshi Takanaka (1979)",
+          "file": "assets/audio/ep10-sa1-station-square-chao-garden.wav",
+          "tempo": "108 BPM",
+          "vibe": "Breezy tropical Stratocaster groove"
+        }
+      ]
+    },
+    {
+      "category": "Neo-Soul & Warm Vinyl Instrumentals (J Dilla & Erykah Badu)",
+      "folder_id": "neo_soul",
+      "tracks": [
+        {
+          "id": "badu_didntchaknow",
+          "name": "Didn't Cha Know (Instrumental)",
+          "artist": "J Dilla / Erykah Badu",
+          "file": "assets/audio/ep07-sa2-neutral-chao-garden.wav",
+          "tempo": "86 BPM",
+          "vibe": "Warm Fender Rhodes, unquantized boom-bap"
+        },
+        {
+          "id": "badu_appletree",
+          "name": "Appletree (Instrumental)",
+          "artist": "Erykah Badu",
+          "file": "assets/audio/ep08-sa2-hero-chao-garden.wav",
+          "tempo": "90 BPM",
+          "vibe": "Punchy funk groove and loose swing"
+        },
+        {
+          "id": "questlove_otherside",
+          "name": "Other Side of the Game (Instrumental)",
+          "artist": "Questlove / Pino Palladino",
+          "file": "assets/audio/ep11-sa1-egg-carrier-chao-garden.wav",
+          "tempo": "72 BPM",
+          "vibe": "Deep sensual bass and late-night calm"
+        }
+      ]
+    },
+    {
+      "category": "Anime & Gaming Classics (Yu Yu Hakusho & Persona 5)",
+      "folder_id": "anime_classics",
+      "tracks": [
+        {
+          "id": "yyh_smilebomb",
+          "name": "Yu Yu Hakusho - Smile Bomb (Brass Inst.)",
+          "artist": "Studio Pierrot OST",
+          "file": "assets/audio/ep06-chao-noises-yosh.wav",
+          "tempo": "115 BPM",
+          "vibe": "Upbeat 90s funk horn celebration"
+        },
+        {
+          "id": "yyh_boogie",
+          "name": "Yu Yu Hakusho - Yusuke's Boogie",
+          "artist": "Yu Yu Hakusho OST",
+          "file": "assets/audio/ep09-sa2-dark-chao-garden.wav",
+          "tempo": "110 BPM",
+          "vibe": "Hard-hitting slap bass duel energy"
+        },
+        {
+          "id": "persona5_beneath",
+          "name": "Persona 5 - Beneath the Mask (Rain)",
+          "artist": "Shoji Meguro",
+          "file": "assets/audio/ep10-sa1-station-square-chao-garden.wav",
+          "tempo": "82 BPM",
+          "vibe": "Cozy acid jazz and muted electric piano"
+        },
+        {
+          "id": "nujabes_aruarian",
+          "name": "Samurai Champloo - Aruarian Dance",
+          "artist": "Nujabes",
+          "file": "assets/audio/ep12-sa1-mystic-ruins-chao-garden.wav",
+          "tempo": "85 BPM",
+          "vibe": "Warm acoustic guitar and mellow vinyl"
+        }
+      ]
+    }
+  ],
+  "soundbytes_by_event": {
+    "kill": [
+      {
+        "id": "sfx_headshot_confirm",
+        "name": "Tactical Headshot Confirm",
+        "file": "assets/audio/ep06-chao-noises-yosh.wav",
+        "description": "Crisp hit confirmation for precision elimination"
+      },
+      {
+        "id": "sfx_sonic_spindash",
+        "name": "Sonic Spin Dash Impact",
+        "file": "assets/audio/ep06-chao-noises-yosh.wav",
+        "description": "High-velocity kinetic impact sound"
+      },
+      {
+        "id": "sfx_silenced_snap",
+        "name": "Goldeneye Silenced PP7 Snap",
+        "file": "assets/audio/ep06-chao-noises-yosh.wav",
+        "description": "Stealth elimination snap"
+      }
+    ],
+    "win": [
+      {
+        "id": "sfx_chao_yosh",
+        "name": "Chao Yosh! - Happy Chirp",
+        "file": "assets/audio/ep06-chao-noises-yosh.wav",
+        "description": "Iconic Sonic Adventure 2 victory celebration"
+      },
+      {
+        "id": "sfx_victory_bell",
+        "name": "Chao Garden Golden Bell",
+        "file": "assets/audio/ep07-sa2-neutral-chao-garden.wav",
+        "description": "Triumphant crystalline chime for match finish"
+      },
+      {
+        "id": "sfx_smile_fanfare",
+        "name": "Smile Bomb Triumphant Fanfare",
+        "file": "assets/audio/ep06-chao-noises-yosh.wav",
+        "description": "90s brass celebration chord"
+      }
+    ],
+    "loss": [
+      {
+        "id": "sfx_eustace_dog",
+        "name": "Eustace Bagge - Stupid Dog!",
+        "file": "assets/audio/ep01-eustace-stupid-dog.wav",
+        "description": "Classic comic outrage for player elimination"
+      },
+      {
+        "id": "sfx_patrick_mayo",
+        "name": "Patrick - Is Mayonnaise an Instrument?",
+        "file": "assets/audio/ep02-patrick-mayonnaise.wav",
+        "description": "Baffled confusion after a blunder"
+      },
+      {
+        "id": "sfx_donald_tantrum",
+        "name": "Donald Duck - Tantrum Rage",
+        "file": "assets/audio/ep05-donald-duck-tantrum.wav",
+        "description": "Comedic duck meltdown for a total squad wipe"
+      }
+    ],
+    "tension": [
+      {
+        "id": "sfx_mojo_curses",
+        "name": "Mojo Jojo - Curses!",
+        "file": "assets/audio/ep03-mojo-jojo-curses.wav",
+        "description": "Villainous tension and scheming climax"
+      },
+      {
+        "id": "sfx_pinky_brain",
+        "name": "Pinky & Brain - What Are We Doing Tonight?",
+        "file": "assets/audio/ep04-pinky-and-brain-tonight.wav",
+        "description": "Tactical plotting before the final storm"
+      },
+      {
+        "id": "sfx_suspense_drone",
+        "name": "SA2 Dark Garden Suspense Tone",
+        "file": "assets/audio/ep09-sa2-dark-chao-garden.wav",
+        "description": "Low drone preceding a major engagement"
+      }
+    ]
+  },
+  "pricing_plans": [
+    {
+      "id": "pay_as_you_go",
+      "name": "Single Clip Pass",
+      "price": "$1.99",
+      "period": "per clip",
+      "badge": "Pay As You Go",
+      "features": [
+        "1 Highlight video export",
+        "Full access to background music library",
+        "Smart audio ducking (-18dB under soundbytes)",
+        "Watermark-free 1080p 60fps export"
+      ]
+    },
+    {
+      "id": "creator_50",
+      "name": "Creator 50 Plan",
+      "price": "$39",
+      "period": "per month",
+      "badge": "50 Videos / Month",
+      "popular": true,
+      "features": [
+        "Up to 50 highlight videos every month ($0.78 / video)",
+        "Automated highlight inflection detection",
+        "Complete Antigravity music & soundbyte library",
+        "Continuous monthly new sound pack releases",
+        "Automated YouTube chapters & description export"
+      ]
+    },
+    {
+      "id": "studio_unlimited",
+      "name": "Unlimited Studio Pass",
+      "price": "$100",
+      "period": "per month",
+      "badge": "Unlimited VIP",
+      "features": [
+        "Unlimited highlight videos every month",
+        "Custom soundbyte uploads & private library",
+        "Direct automated YouTube API upload queue integration",
+        "Priority 4K 60fps rendering",
+        "Commercial monetization & YouTube Partner license"
+      ]
+    }
+  ]
+}

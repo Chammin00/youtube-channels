@@ -1,0 +1,33 @@
+# Rendered Video Outputs & Media
+output/
+*.mp4
+*.webm
+*.mov
+*.mkv
+*.part
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Google OAuth Credentials & Tokens
+client_secret*.json
+token*.json
+credentials.json
+.env
+.env.*
+
+# System & Editor
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.log
+
+# Temporary raw downloads
+assets/licensed/_downloads/
