@@ -47,36 +47,36 @@ class StudioEngine {
         id: 'mark_tension',
         time: 3.2,
         event: 'tension',
-        eventTitle: 'Dramatic Tension / Buildup',
+        eventTitle: 'Standoff / Heat / Flip Setup',
         badgeColor: '#f59e0b',
-        description: 'Enemy spotted / final round standoff begins',
+        description: 'Neutral standoff, opponent Heat Engager, or Law Flip lead-in',
         sfx: null
       },
       {
         id: 'mark_kill',
         time: 7.6,
         event: 'kill',
-        eventTitle: 'Kill / Elimination Impact',
+        eventTitle: 'Throw / Kick / Counter / Nunchuck',
         badgeColor: '#ef4444',
-        description: 'Decisive headshot or multi-kill impact',
+        description: 'Law Throw (Bowser), Good Kick Lee, Counterattack, Rose Whip, or Hat of Discipline',
         sfx: null
       },
       {
         id: 'mark_loss',
         time: 13.4,
         event: 'loss',
-        eventTitle: 'Near-Loss / Opponent Whiff',
+        eventTitle: 'Whiff / Dodge / Throw Break',
         badgeColor: '#a855f7',
-        description: 'Close call or opponent defeat callout',
+        description: 'Pokemon Miss/Dodge or Rush Hour Throw Break escape',
         sfx: null
       },
       {
         id: 'mark_win',
         time: 18.0,
         event: 'win',
-        eventTitle: 'Win / Victory Celebration',
+        eventTitle: 'Round K.O. / Victory Finisher',
         badgeColor: '#10b981',
-        description: 'Round won & match victory announcement',
+        description: 'Knockout, Wipe Yourself Off, Not in Rush Hour 3, Captain Insano, or Non-Human KO',
         sfx: null
       }
     ];
@@ -159,14 +159,14 @@ class StudioEngine {
     this.eqPreset = 'gaming';
     this.eqFilter = null;
     this.soundboardPads = [
-      { id: 1, key: '1', title: 'Tension', file: 'assets/licensed/sfx/tension/Kenney_Impact_Metal_001.ogg', color: '#f59e0b' },
-      { id: 2, key: '2', title: 'Elim Impact', file: 'assets/licensed/sfx/kill/Kenney_Impact_Wood_Heavy_000.ogg', color: '#ef4444' },
-      { id: 3, key: '3', title: 'Double Kill', file: 'assets/licensed/sfx/kill/Kenney_Voice_Double_Kill.ogg', color: '#f43f5e' },
-      { id: 4, key: '4', title: 'Opponent Defeat', file: 'assets/licensed/sfx/loss/Kenney_Voice_You_Lose.ogg', color: '#a855f7' },
-      { id: 5, key: '5', title: 'Victory Horn', file: 'assets/licensed/sfx/win/Kenney_Voice_Victory.ogg', color: '#10b981' },
-      { id: 6, key: '6', title: 'Winner Shout', file: 'assets/licensed/sfx/win/Kenney_Voice_Winner.ogg', color: '#34d399' },
-      { id: 7, key: '7', title: 'Heavy Punch', file: 'assets/licensed/sfx/kill/Kenney_Impact_Punch_000.ogg', color: '#ec4899' },
-      { id: 8, key: '8', title: 'Dramatic Stinger', file: 'assets/licensed/sfx/tension/Kenney_Impact_Glass_Heavy_000.ogg', color: '#6366f1' }
+      { id: 1, key: '1', title: 'So Long Bowser', file: 'assets/licensed/sfx/kill/01_Mario (SM64) - So Long Eh Bowser (Law Successful Throw).mp3', color: '#ef4444' },
+      { id: 2, key: '2', title: 'Good Kick Lee', file: 'assets/licensed/sfx/kill/02_Rush Hour - Damn Good Kick Lee (Heavy Kick).wav', color: '#f59e0b' },
+      { id: 3, key: '3', title: 'No Mercy', file: 'assets/licensed/sfx/kill/07_Captain Insano (Waterboy) - Shows No Mercy (Toe-Stomp & Heat).mp3', color: '#f43f5e' },
+      { id: 4, key: '4', title: 'Hat Discipline', file: 'assets/licensed/sfx/kill/06_Rolf (Ed Edd n Eddy) - The Hat of Discipline.mp3', color: '#a855f7' },
+      { id: 5, key: '5', title: 'Barrel Roll', file: 'assets/licensed/sfx/tension/03_Peppy (Star Fox 64) - Do a Barrel Roll (Law Flip Attack).wav', color: '#38bdf8' },
+      { id: 6, key: '6', title: 'Eustace Laugh', file: 'assets/licensed/sfx/kill/08_Eustace Bagge - Evil Smug Laugh (Slide & Hit).mp3', color: '#ec4899' },
+      { id: 7, key: '7', title: 'Way to Dodge', file: 'assets/licensed/sfx/loss/02_Pokemon Stadium - Yes Way to Dodge (Sidestep).mp3', color: '#6366f1' },
+      { id: 8, key: '8', title: 'Knockout!', file: 'assets/licensed/sfx/win/01_Pokemon Stadium - Knockout There It Is (Round KO).mp3', color: '#10b981' }
     ];
   }
 

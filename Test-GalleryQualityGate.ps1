@@ -171,7 +171,7 @@ try {
 
         $sampleSfxUrl = "http://localhost:$TestPort/" + $manifest.sfx.kill[0].file
         $respSfx = Invoke-WebRequest -Uri $sampleSfxUrl -Method Head -UseBasicParsing -TimeoutSec 5
-        $results.Add((New-GateCheckResult -Category "HTTPServer" -CheckName "Serve OGG Studio Soundbyte" -Passed ($respSfx.StatusCode -eq 200 -and $respSfx.Headers["Content-Type"] -match "audio/ogg") -Details "Content-Type: $($respSfx.Headers['Content-Type'])"))
+        $results.Add((New-GateCheckResult -Category "HTTPServer" -CheckName "Serve Studio Soundbyte" -Passed ($respSfx.StatusCode -eq 200 -and $respSfx.Headers["Content-Type"] -match "audio/(ogg|mpeg|wav)") -Details "Content-Type: $($respSfx.Headers['Content-Type'])"))
 
         # Test POST /api/render
         $renderPayload = @{

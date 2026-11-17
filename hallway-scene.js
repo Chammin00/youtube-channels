@@ -136,10 +136,14 @@ class GalleryHallway {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.outputEncoding = THREE.sRGBEncoding;
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.18;
+    this.renderer.toneMappingExposure = 1.32;
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.container.appendChild(this.renderer.domElement);
+
+    this.ambientLight = null;
+    this.corridorLights = [];
+    this.currentVibe = 'lounge';
 
     this.buildGalleryArchitecture();
     this.setupMuseumLighting();
@@ -750,15 +754,16 @@ class GalleryHallway {
   }
 
   setupMuseumLighting() {
-    // Soft warm museum ambient fill
-    const ambient = new THREE.AmbientLight(0xfff4e6, 0.48);
-    this.scene.add(ambient);
+    // Soft warm studio ambient fill
+    this.ambientLight = new THREE.AmbientLight(0xfff4e6, 0.62);
+    this.scene.add(this.ambientLight);
 
     // Warm overhead corridor chandelier / recessed downlights down the walkway
     [8.0, 2.0, -4.0, -10.0].forEach((z) => {
-      const downlight = new THREE.PointLight(0xffe4c4, 0.65, 11, 1.8);
+      const downlight = new THREE.PointLight(0xffe4c4, 0.78, 12, 1.7);
       downlight.position.set(0, 3.95, z);
       this.scene.add(downlight);
+      this.corridorLights.push(downlight);
     });
 
     // Focused Museum Spotlights on each of the 4 Framed Paintings
@@ -768,7 +773,7 @@ class GalleryHallway {
       const spotX = isEnd ? 0 : (isLeft ? -2.05 : 2.05);
       const spotZ = isEnd ? -12.6 : pic.position.z;
 
-      const spot = new THREE.SpotLight(0xfff6e5, 2.4, 14, Math.PI / 4.2, 0.48, 1.2);
+      const spot = new THREE.SpotLight(0xfff6e5, 2.6, 14, Math.PI / 4.2, 0.48, 1.2);
       spot.position.set(spotX, 4.05, spotZ);
       spot.castShadow = true;
       spot.shadow.mapSize.width = 1024;
@@ -790,6 +795,58 @@ class GalleryHallway {
       canister.rotateX(Math.PI / 2);
       this.scene.add(canister);
     });
+  }
+
+  setStudioVibe(vibe = 'lounge') {
+    this.currentVibe = vibe;
+    if (!this.scene || !this.renderer) return;
+    if (vibe === 'neon') {
+      this.scene.background = new THREE.Color(0x070b19);
+      this.scene.fog = new THREE.FogExp2(0x070b19, 0.018);
+      if (this.ambientLight) {
+        this.ambientLight.color.setHex(0x88ccff);
+        this.ambientLight.intensity = 0.68;
+      }
+      this.corridorLights.forEach((l, i) => {
+        l.color.setHex(i % 2 === 0 ? 0x38bdf8 : 0xc084fc);
+        l.intensity = 0.92;
+      });
+      if (this.dustParticles) {
+        this.dustParticles.material.color.setHex(0x38bdf8);
+      }
+      this.renderer.toneMappingExposure = 1.38;
+    } else if (vibe === 'sunset') {
+      this.scene.background = new THREE.Color(0x140c10);
+      this.scene.fog = new THREE.FogExp2(0x140c10, 0.019);
+      if (this.ambientLight) {
+        this.ambientLight.color.setHex(0xffd2a6);
+        this.ambientLight.intensity = 0.72;
+      }
+      this.corridorLights.forEach((l) => {
+        l.color.setHex(0xff9e5e);
+        l.intensity = 0.88;
+      });
+      if (this.dustParticles) {
+        this.dustParticles.material.color.setHex(0xfb923c);
+      }
+      this.renderer.toneMappingExposure = 1.35;
+    } else {
+      // Creator Lounge (warm, bright, welcoming)
+      this.scene.background = new THREE.Color(0x0c0e17);
+      this.scene.fog = new THREE.FogExp2(0x0c0e17, 0.018);
+      if (this.ambientLight) {
+        this.ambientLight.color.setHex(0xfff4e6);
+        this.ambientLight.intensity = 0.68;
+      }
+      this.corridorLights.forEach((l) => {
+        l.color.setHex(0xffe4c4);
+        l.intensity = 0.82;
+      });
+      if (this.dustParticles) {
+        this.dustParticles.material.color.setHex(0xf5dc84);
+      }
+      this.renderer.toneMappingExposure = 1.34;
+    }
   }
 
   buildFramedPaintings() {
@@ -923,22 +980,22 @@ class GalleryHallway {
     ctx.lineWidth = 2;
     ctx.strokeRect(42, 42, W - 84, H - 84);
 
-    // Roman Numeral Medallion
+    // Station Step Badge
     ctx.fillStyle = pic.accentCss;
-    ctx.font = '700 22px "Segoe UI", sans-serif';
+    ctx.font = '800 22px "Segoe UI", sans-serif';
     ctx.textAlign = 'left';
-    ctx.fillText(`EXHIBIT ${pic.roman}  •  ${pic.stepLabel}`, 76, 108);
+    ctx.fillText(`STATION 0${pic.id}  •  ${pic.stepLabel}`, 76, 108);
 
     // Completed Status Badge on Painting
     ctx.textAlign = 'right';
     if (pic.completed) {
       ctx.fillStyle = '#10b981';
-      ctx.font = '700 22px "Segoe UI", sans-serif';
-      ctx.fillText('✓ COMPLETED', W - 76, 108);
+      ctx.font = '800 22px "Segoe UI", sans-serif';
+      ctx.fillText('✓ READY', W - 76, 108);
     } else {
       ctx.fillStyle = '#e2e8f0';
-      ctx.font = '600 20px "Segoe UI", sans-serif';
-      ctx.fillText('ACTIVE EXHIBIT', W - 76, 108);
+      ctx.font = '700 20px "Segoe UI", sans-serif';
+      ctx.fillText('TAP TO OPEN', W - 76, 108);
     }
 
     // Main Exhibit Title
@@ -961,15 +1018,15 @@ class GalleryHallway {
     ctx.stroke();
 
     // Current Selection Summary Box painted directly onto the canvas
-    ctx.fillStyle = 'rgba(10, 12, 18, 0.55)';
+    ctx.fillStyle = 'rgba(10, 12, 18, 0.65)';
     ctx.fillRect(76, 365, W - 152, 110);
     ctx.strokeStyle = pic.accentCss;
     ctx.lineWidth = 2;
     ctx.strokeRect(76, 365, W - 152, 110);
 
     ctx.fillStyle = '#94a3b8';
-    ctx.font = '600 18px monospace';
-    ctx.fillText('CURRENT CURATION:', 102, 405);
+    ctx.font = '700 18px monospace';
+    ctx.fillText('ACTIVE SELECTION:', 102, 405);
 
     ctx.fillStyle = '#f8fafc';
     ctx.font = '700 26px "Segoe UI", sans-serif';
@@ -977,8 +1034,8 @@ class GalleryHallway {
 
     // Bottom Call-to-Action Footer
     ctx.fillStyle = pic.accentCss;
-    ctx.font = '700 21px monospace';
-    ctx.fillText('CLICK PAINTING TO OPEN EXHIBIT MENU  →', 76, 548);
+    ctx.font = '800 21px monospace';
+    ctx.fillText('CLICK FRAME TO JUMP HERE  →', 76, 548);
 
     texture.needsUpdate = true;
   }
