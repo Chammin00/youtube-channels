@@ -1,5 +1,5 @@
 ﻿window.AUDIO_MANIFEST = {
-    "generated":  "2026-11-14T11:55:31",
+    "generated":  "2026-11-24T16:41:40",
     "music":  [
                   {
                       "id":  "sonic_yyh",
@@ -111,17 +111,17 @@
                                          "credit":  "\"Sonic Adventure 2 - Green Forest\" - Curated Gaming \u0026 Anime Soundtrack (@chaseham00)"
                                      },
                                      {
-                                         "id":  "m-sonic_yyh-sonic-adventure-2-live-and-learn-rock",
-                                         "title":  "Sonic Adventure 2 - Live and Learn Rock",
-                                         "file":  "assets/licensed/music/sonic_yyh/Sonic Adventure 2 - Live and Learn Rock.mp3",
-                                         "bytes":  1801196,
-                                         "sizeMB":  1.72,
-                                         "sizeKB":  1759,
+                                         "id":  "m-sonic_yyh-sonic-adventure-2-live-and-learn",
+                                         "title":  "Sonic Adventure 2 - Live and Learn",
+                                         "file":  "assets/licensed/music/sonic_yyh/Sonic Adventure 2 - Live and Learn.mp3",
+                                         "bytes":  6463916,
+                                         "sizeMB":  6.16,
+                                         "sizeKB":  6312.4,
                                          "artist":  "SEGA Sound Team / Studio Pierrot",
                                          "source":  "Curated Gaming \u0026 Anime Vault",
                                          "license":  "Creator Vault OST",
                                          "licenseUrl":  "https://youtube.com/@chaseham00",
-                                         "credit":  "\"Sonic Adventure 2 - Live and Learn Rock\" - Curated Gaming \u0026 Anime Soundtrack (@chaseham00)"
+                                         "credit":  "\"Sonic Adventure 2 - Live and Learn\" - Curated Gaming \u0026 Anime Soundtrack (@chaseham00)"
                                      },
                                      {
                                          "id":  "m-sonic_yyh-sonic-adventure-2-pumpkin-hill",
@@ -148,19 +148,6 @@
                                          "license":  "Creator Vault OST",
                                          "licenseUrl":  "https://youtube.com/@chaseham00",
                                          "credit":  "\"Sonic Adventure 2 - Wild Canyon\" - Curated Gaming \u0026 Anime Soundtrack (@chaseham00)"
-                                     },
-                                     {
-                                         "id":  "m-sonic_yyh-yu-yu-hakusho-chill-nostalgia-mix",
-                                         "title":  "Yu Yu Hakusho - Chill Nostalgia Mix",
-                                         "file":  "assets/licensed/music/sonic_yyh/Yu Yu Hakusho - Chill Nostalgia Mix.mp3",
-                                         "bytes":  26137772,
-                                         "sizeMB":  24.93,
-                                         "sizeKB":  25525.2,
-                                         "artist":  "SEGA Sound Team / Studio Pierrot",
-                                         "source":  "Curated Gaming \u0026 Anime Vault",
-                                         "license":  "Creator Vault OST",
-                                         "licenseUrl":  "https://youtube.com/@chaseham00",
-                                         "credit":  "\"Yu Yu Hakusho - Chill Nostalgia Mix\" - Curated Gaming \u0026 Anime Soundtrack (@chaseham00)"
                                      },
                                      {
                                          "id":  "m-sonic_yyh-yu-yu-hakusho-ending-3-unbalanced-kiss",
@@ -213,6 +200,19 @@
                                          "license":  "Creator Vault OST",
                                          "licenseUrl":  "https://youtube.com/@chaseham00",
                                          "credit":  "\"Yu Yu Hakusho - Smile Bomb Opening\" - Curated Gaming \u0026 Anime Soundtrack (@chaseham00)"
+                                     },
+                                     {
+                                         "id":  "m-sonic_yyh-yu-yu-hakusho-struggle-of-sadness",
+                                         "title":  "Yu Yu Hakusho - Struggle of Sadness",
+                                         "file":  "assets/licensed/music/sonic_yyh/Yu Yu Hakusho - Struggle of Sadness.mp3",
+                                         "bytes":  3283244,
+                                         "sizeMB":  3.13,
+                                         "sizeKB":  3206.3,
+                                         "artist":  "SEGA Sound Team / Studio Pierrot",
+                                         "source":  "Curated Gaming \u0026 Anime Vault",
+                                         "license":  "Creator Vault OST",
+                                         "licenseUrl":  "https://youtube.com/@chaseham00",
+                                         "credit":  "\"Yu Yu Hakusho - Struggle of Sadness\" - Curated Gaming \u0026 Anime Soundtrack (@chaseham00)"
                                      }
                                  ]
                   },
@@ -329,9 +329,9 @@
                                          "id":  "m-arcade_retro-ninja-gaiden-act-5-cutscene",
                                          "title":  "Ninja Gaiden - Act 5 Cutscene",
                                          "file":  "assets/licensed/music/arcade_retro/Ninja Gaiden - Act 5 Cutscene.mp3",
-                                         "bytes":  769580,
-                                         "sizeMB":  0.73,
-                                         "sizeKB":  751.5,
+                                         "bytes":  4323500,
+                                         "sizeMB":  4.12,
+                                         "sizeKB":  4222.2,
                                          "artist":  "Yuzo Koshiro / Capcom / Technos / Nintendo",
                                          "source":  "Retro Arcade Vault",
                                          "license":  "Creator Vault OST",
@@ -563,9 +563,9 @@
                                          "id":  "m-arcade_retro-street-fighter-ii-guiles-theme-arcade",
                                          "title":  "Street Fighter II - Guiles Theme Arcade",
                                          "file":  "assets/licensed/music/arcade_retro/Street Fighter II - Guiles Theme Arcade.mp3",
-                                         "bytes":  1921580,
-                                         "sizeMB":  1.83,
-                                         "sizeKB":  1876.5,
+                                         "bytes":  2901932,
+                                         "sizeMB":  2.77,
+                                         "sizeKB":  2833.9,
                                          "artist":  "Yuzo Koshiro / Capcom / Technos / Nintendo",
                                          "source":  "Retro Arcade Vault",
                                          "license":  "Creator Vault OST",
@@ -586,22 +586,22 @@
                                          "credit":  "\"Streets of Rage 2 - Stage 1-1 Go Straight\" - Retro Arcade \u0026 Fighting Soundtrack (@chaseham00)"
                                      },
                                      {
-                                         "id":  "m-arcade_retro-wii-shop-channel-chill-trap-remix",
-                                         "title":  "Wii Shop Channel - Chill Trap Remix",
-                                         "file":  "assets/licensed/music/arcade_retro/Wii Shop Channel - Chill Trap Remix.mp3",
-                                         "bytes":  1921580,
-                                         "sizeMB":  1.83,
-                                         "sizeKB":  1876.5,
+                                         "id":  "m-arcade_retro-wii-shop-channel-original-theme",
+                                         "title":  "Wii Shop Channel - Original Theme",
+                                         "file":  "assets/licensed/music/arcade_retro/Wii Shop Channel - Original Theme.mp3",
+                                         "bytes":  3081644,
+                                         "sizeMB":  2.94,
+                                         "sizeKB":  3009.4,
                                          "artist":  "Yuzo Koshiro / Capcom / Technos / Nintendo",
                                          "source":  "Retro Arcade Vault",
                                          "license":  "Creator Vault OST",
                                          "licenseUrl":  "https://youtube.com/@chaseham00",
-                                         "credit":  "\"Wii Shop Channel - Chill Trap Remix\" - Retro Arcade \u0026 Fighting Soundtrack (@chaseham00)"
+                                         "credit":  "\"Wii Shop Channel - Original Theme\" - Retro Arcade \u0026 Fighting Soundtrack (@chaseham00)"
                                      },
                                      {
-                                         "id":  "m-arcade_retro-zelda-great-fairy-fountain-chill",
-                                         "title":  "Zelda - Great Fairy Fountain Chill",
-                                         "file":  "assets/licensed/music/arcade_retro/Zelda - Great Fairy Fountain Chill.mp3",
+                                         "id":  "m-arcade_retro-zelda-great-fairy-fountain",
+                                         "title":  "Zelda - Great Fairy Fountain",
+                                         "file":  "assets/licensed/music/arcade_retro/Zelda - Great Fairy Fountain.mp3",
                                          "bytes":  1731500,
                                          "sizeMB":  1.65,
                                          "sizeKB":  1690.9,
@@ -609,7 +609,7 @@
                                          "source":  "Retro Arcade Vault",
                                          "license":  "Creator Vault OST",
                                          "licenseUrl":  "https://youtube.com/@chaseham00",
-                                         "credit":  "\"Zelda - Great Fairy Fountain Chill\" - Retro Arcade \u0026 Fighting Soundtrack (@chaseham00)"
+                                         "credit":  "\"Zelda - Great Fairy Fountain\" - Retro Arcade \u0026 Fighting Soundtrack (@chaseham00)"
                                      }
                                  ]
                   },
@@ -726,9 +726,9 @@
                                          "id":  "m-perfect_dark-perfect-dark-chicago-stealth-ambience",
                                          "title":  "Perfect Dark - Chicago Stealth Ambience",
                                          "file":  "assets/licensed/music/perfect_dark/Perfect Dark - Chicago Stealth Ambience.mp3",
-                                         "bytes":  7322156,
-                                         "sizeMB":  6.98,
-                                         "sizeKB":  7150.5,
+                                         "bytes":  8538092,
+                                         "sizeMB":  8.14,
+                                         "sizeKB":  8338,
                                          "artist":  "Rareware Sound Team",
                                          "source":  "Perfect Dark OST Vault",
                                          "license":  "Creator Vault OST",

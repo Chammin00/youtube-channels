@@ -1,4 +1,4 @@
-#Requires -Version 5.1
+﻿#Requires -Version 5.1
 <#
 .SYNOPSIS
     Builds audio_manifest.json and audio_manifest.js from real, verified character soundbytes and background music on disk.
@@ -96,6 +96,16 @@ $musicCategories = [ordered]@{
         attribution         = '"{title}" - Perfect Dark Tactical Soundtrack (@chaseham00)'
         attributionTemplate = '"{title}" - Perfect Dark Tactical Soundtrack (@chaseham00)'
     }
+    'flow_music'   = @{
+        label               = 'Google Flow Music Originals (Monetization-Safe)'
+        mood                = 'Original Lyria studio grooves, anime jazz-rock, neo-soul, and sleep beds'
+        artist              = 'Chase (@chaseham00) / Google Flow Music'
+        source              = 'Google Flow Music Vault'
+        license             = 'Original Creator Track (Flow Music)'
+        licenseUrl          = 'https://youtube.com/@chaseham00'
+        attribution         = '"{title}" - Original Track produced with Google Flow Music (@chaseham00)'
+        attributionTemplate = '"{title}" - Google Flow Music Original (@chaseham00)'
+    }
     'chill'        = @{
         label               = 'Chill & Lounge Grooves'
         mood                = 'Warm jazz, bossa nova, Rhodes lounge & late-night vibe'
@@ -168,6 +178,33 @@ foreach ($evt in @('kill', 'win', 'loss', 'tension')) {
     $sfxLicense | ConvertTo-Json | Set-Content -Path (Join-Path (Join-Path $sfxDir $evt) 'LICENSE.json') -Encoding UTF8
 }
 
+function Copy-AudioAssetIfChanged {
+    [CmdletBinding(SupportsShouldProcess)]
+    param(
+        [Parameter(Mandatory = $true)][string]$SourcePath,
+        [Parameter(Mandatory = $true)][string]$DestinationPath
+    )
+
+    if (-not (Test-Path -Path $SourcePath)) {
+        return $false
+    }
+
+    $shouldCopy = -not (Test-Path -Path $DestinationPath)
+    if (-not $shouldCopy) {
+        $srcItem = Get-Item -Path $SourcePath
+        $destItem = Get-Item -Path $DestinationPath
+        if (($srcItem.Length -ne $destItem.Length) -or ($srcItem.LastWriteTimeUtc -gt $destItem.LastWriteTimeUtc)) {
+            $shouldCopy = $true
+        }
+    }
+
+    if ($shouldCopy -and $PSCmdlet.ShouldProcess($DestinationPath, "Copy from $SourcePath")) {
+        Copy-Item -Path $SourcePath -Destination $DestinationPath -Force
+        return $true
+    }
+    return $false
+}
+
 # ---------------------------------------------------------------------------
 # 2B. Sync Curated Background Music from YouTube Automation Vault
 # ---------------------------------------------------------------------------
@@ -175,7 +212,7 @@ if (Test-Path $ytMusicSource) {
     $musicSyncMap = @(
         # Sonic Adventure 1 & 2 + Yu Yu Hakusho
         @{ Src = 'sonic_adventure_city_escape.mp3';              Cat = 'sonic_yyh';    DestName = 'Sonic Adventure 2 - City Escape.mp3' },
-        @{ Src = 'sonic_live_and_learn_rock.mp3';                Cat = 'sonic_yyh';    DestName = 'Sonic Adventure 2 - Live and Learn Rock.mp3' },
+        @{ Src = 'sonic_live_and_learn_rock.mp3';                Cat = 'sonic_yyh';    DestName = 'Sonic Adventure 2 - Live and Learn.mp3' },
         @{ Src = 'sonic_adventure_it_doesnt_matter.mp3';         Cat = 'sonic_yyh';    DestName = 'Sonic Adventure - It Doesnt Matter.mp3' },
         @{ Src = 'sonic_adventure_theme_of_e102_gamma.mp3';      Cat = 'sonic_yyh';    DestName = 'Sonic Adventure - Theme of E-102 Gamma.mp3' },
         @{ Src = 'sonic_adventure_e101_beta_crazy_robo.mp3';     Cat = 'sonic_yyh';    DestName = 'Sonic Adventure - E-101 Beta Crazy Robo.mp3' },
@@ -189,7 +226,7 @@ if (Test-Path $ytMusicSource) {
         @{ Src = 'yu_yu_hakusho_ed1_homework_doesnt_end.mp3';    Cat = 'sonic_yyh';    DestName = 'Yu Yu Hakusho - Homework Doesnt End ED1.mp3' },
         @{ Src = 'yu_yu_hakusho_ed3.mp3';                        Cat = 'sonic_yyh';    DestName = 'Yu Yu Hakusho - Ending 3 Unbalanced Kiss.mp3' },
         @{ Src = 'yu_yu_hakusho_ed5.mp3';                        Cat = 'sonic_yyh';    DestName = 'Yu Yu Hakusho - Ending 5 Daydream Generation.mp3' },
-        @{ Src = 'yu_yu_hakusho_chill.mp3';                      Cat = 'sonic_yyh';    DestName = 'Yu Yu Hakusho - Chill Nostalgia Mix.mp3' },
+        @{ Src = 'yu_yu_hakusho_chill.mp3';                      Cat = 'sonic_yyh';    DestName = 'Yu Yu Hakusho - Struggle of Sadness.mp3' },
 
         # Arcade Fighting & Retro Classics
         @{ Src = 'Streets Of Rage 2 Soundtrack - Stage 1-1 (Go Straight).mp3'; Cat = 'arcade_retro'; DestName = 'Streets of Rage 2 - Stage 1-1 Go Straight.mp3' },
@@ -219,9 +256,9 @@ if (Test-Path $ytMusicSource) {
         @{ Src = 'ninja_gaiden_cutscene_act_2.mp3';              Cat = 'arcade_retro'; DestName = 'Ninja Gaiden - Act 2 Cutscene.mp3' },
         @{ Src = 'ninja_gaiden_cutscene_act_4.mp3';              Cat = 'arcade_retro'; DestName = 'Ninja Gaiden - Act 4 Cutscene.mp3' },
         @{ Src = 'ninja_gaiden_cutscene_act_5.mp3';              Cat = 'arcade_retro'; DestName = 'Ninja Gaiden - Act 5 Cutscene.mp3' },
-        @{ Src = 'zelda_fairy_fountain_chill.mp3';               Cat = 'arcade_retro'; DestName = 'Zelda - Great Fairy Fountain Chill.mp3' },
+        @{ Src = 'zelda_fairy_fountain_chill.mp3';               Cat = 'arcade_retro'; DestName = 'Zelda - Great Fairy Fountain.mp3' },
         @{ Src = 'dkc_aquatic_ambiance.mp3';                     Cat = 'arcade_retro'; DestName = 'Donkey Kong Country - Aquatic Ambiance.mp3' },
-        @{ Src = 'wii_shop_channel_chill_trap.mp3';              Cat = 'arcade_retro'; DestName = 'Wii Shop Channel - Chill Trap Remix.mp3' },
+        @{ Src = 'wii_shop_channel_chill_trap.mp3';              Cat = 'arcade_retro'; DestName = 'Wii Shop Channel - Original Theme.mp3' },
 
         # Perfect Dark Tactical Score
         @{ Src = 'perfect_dark_datadyne_central_defection.mp3';      Cat = 'perfect_dark'; DestName = 'Perfect Dark - DataDyne Central Defection.mp3' },
@@ -247,17 +284,34 @@ if (Test-Path $ytMusicSource) {
     $syncedMusicCount = 0
     foreach ($mItem in $musicSyncMap) {
         $srcFile = Join-Path $ytMusicSource $mItem.Src
-        if (Test-Path $srcFile) {
-            $destFolder = Join-Path $musicDir $mItem.Cat
-            $destPath = Join-Path $destFolder $mItem.DestName
-            if (-not (Test-Path $destPath)) {
-                Copy-Item -Path $srcFile -Destination $destPath -Force
-                $syncedMusicCount++
-            }
+        $destFolder = Join-Path $musicDir $mItem.Cat
+        $destPath = Join-Path $destFolder $mItem.DestName
+        if (Copy-AudioAssetIfChanged -SourcePath $srcFile -DestinationPath $destPath) {
+            $syncedMusicCount++
         }
     }
     if ($syncedMusicCount -gt 0) {
         Write-Host "Synced $syncedMusicCount curated Gaming & Anime BGM tracks into assets/licensed/music." -ForegroundColor Cyan
+    }
+}
+
+# ---------------------------------------------------------------------------
+# 2D. Sync Google Flow Music Originals (if staged in exports/youtube_channels)
+# ---------------------------------------------------------------------------
+$flowMusicExportSource = 'G:\My Drive\Antigravity\Projects\Google Flow-music\exports\youtube_channels'
+if (Test-Path $flowMusicExportSource) {
+    $flowMusicFiles = @(Get-ChildItem -Path $flowMusicExportSource -File -ErrorAction SilentlyContinue |
+        Where-Object { $audioExt -contains $_.Extension.ToLowerInvariant() })
+    $syncedFlowCount = 0
+    $flowDestFolder = Join-Path $musicDir 'flow_music'
+    foreach ($fmFile in $flowMusicFiles) {
+        $destPath = Join-Path $flowDestFolder $fmFile.Name
+        if (Copy-AudioAssetIfChanged -SourcePath $fmFile.FullName -DestinationPath $destPath) {
+            $syncedFlowCount++
+        }
+    }
+    if ($syncedFlowCount -gt 0) {
+        Write-Host "Synced $syncedFlowCount Google Flow Music originals into assets/licensed/music/flow_music." -ForegroundColor Cyan
     }
 }
 
@@ -314,13 +368,10 @@ if (Test-Path $ytSoundbiteSource) {
     $syncedSfxCount = 0
     foreach ($sItem in $approvedSfxMap) {
         $srcFile = Join-Path $ytSoundbiteSource $sItem.Src
-        if (Test-Path $srcFile) {
-            $destFolder = Join-Path $sfxDir $sItem.Evt
-            $destPath = Join-Path $destFolder $sItem.DestName
-            if (-not (Test-Path $destPath)) {
-                Copy-Item -Path $srcFile -Destination $destPath -Force
-                $syncedSfxCount++
-            }
+        $destFolder = Join-Path $sfxDir $sItem.Evt
+        $destPath = Join-Path $destFolder $sItem.DestName
+        if (Copy-AudioAssetIfChanged -SourcePath $srcFile -DestinationPath $destPath) {
+            $syncedSfxCount++
         }
     }
     if ($syncedSfxCount -gt 0) {
